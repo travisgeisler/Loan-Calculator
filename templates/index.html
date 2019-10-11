@@ -1,8 +1,26 @@
 {% extends 'base.html' %}
-
 {% block body %}
 
-	<h2> This is my Flask server!! </h2>
+<form  method="post">
+  <table>
+    <tr>
+      <td> Loan Amount: </td> <td> <input type="text" name="amount" /> </td>
+    </tr>
+    <tr>
+      <td> Number of payments per year: </td> <td> <input type="text" name="nperyear" /> </td>
+    </tr>
+    <tr>
+      <td> Number of years on loan: </td> <td> <input type="text" name="years" /> </td>
+    </tr>
+    <tr>
+      <td> Interest Rate: </td> <td> <input type="text" name="rate" /> </td>
+    </tr>
+  </table>
+    <br>
+  <input class="button" type="submit" formaction="/loan" value="Calculate" />
 
-	
+</form>
+
+<p> {{ display }} </p>
+<div style="clear:both;"></div>
 {% endblock %}
